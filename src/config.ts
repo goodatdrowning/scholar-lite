@@ -31,6 +31,7 @@ export const SITE = {
     { text: 'Achievements', link: '/achievements', key: 'achievements' },
     { text: 'Team', link: '/team', key: 'team' },
     { text: 'Activities', link: '/activities', key: 'activities' },
+    { text: 'Search', link: '/search', key: 'search' },
     { text: 'Join Us', link: '/join', key: 'join' },
   ],
 

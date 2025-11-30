@@ -10,6 +10,12 @@
 **[English](./README.md) | [简体中文](./README.zh-CN.md)**
 
 <p align="center">
+  <a href="https://scholar-lite.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-View_Site-2ea44f?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Demo" />
+  </a>
+</p>
+
+<p align="center">
   <a href="https://app.netlify.com/start/deploy?repository=https://github.com/fjd2004711/scholar-lite">
     <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify">
   </a>
@@ -50,10 +56,24 @@ Scholar-Lite is engineered for speed. Built on Astro's "Zero JS by Default" arch
 *   📝 **Markdown Powered**: Manage publications, news, and team members via simple Markdown files. **No coding required**.
 *   🎨 **Modern & Clean**: Professional academic aesthetic powered by the latest **Tailwind CSS v4**.
 *   🌍 **i18n Ready**: Built-in multi-language support (English/Chinese) to reach a global audience.
+*   🔍 **Smart Search**: Built-in **Pagefind** static search engine to instantly find publications and news.
+*   📊 **Data Visualization**: Integrated charts to showcase your publication growth and impact.
+*   📚 **BibTeX Import**: Automatically generate publication lists from your `.bib` files.
 *   🔍 **SEO Ready**: Optimized meta tags and structure to ensure your research gets found by search engines.
 *   🛡️ **Type Safe**: Built with TypeScript and Zod to ensure your data is always robust.
 
 ---
+
+## 📚 Managing Publications
+
+### Auto-Import from BibTeX
+Stop manually editing Markdown files. Just place your `citations.bib` file in the root directory and run:
+
+```bash
+npm run import-bibtex
+```
+
+This will automatically generate Markdown files in `src/content/publications/` for each entry in your `.bib` file.
 
 ## ⚙️ Configuration
 

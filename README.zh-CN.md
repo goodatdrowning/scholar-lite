@@ -10,6 +10,12 @@
 **[English](./README.md) | [简体中文](./README.zh-CN.md)**
 
 <p align="center">
+  <a href="https://scholar-lite.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-在线演示-2ea44f?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Demo" />
+  </a>
+</p>
+
+<p align="center">
   <a href="https://app.netlify.com/start/deploy?repository=https://github.com/fjd2004711/scholar-lite">
     <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify">
   </a>
@@ -50,10 +56,24 @@ Scholar-Lite 为速度而生。基于 Astro 的 "Zero JS by Default" 架构，�
 *   ✍️ **Markdown 驱动**：无需数据库，无需懂代码！通过简单的 Markdown 文件即可管理论文、新闻和成员信息。
 *   🎨 **现代美学**：采用最新的 **Tailwind CSS v4**，打造清爽、专业的学术主页风格。
 *   🌐 **多语言支持**：内置国际化（i18n）架构，轻松实现中英文一键切换，连接全球学者。
+*   🔍 **智能搜索**：内置 **Pagefind** 静态搜索引擎，毫秒级检索论文与新闻。
+*   📊 **数据可视化**：集成可视化图表组件，直观展示论文发表趋势与影响力。
+*   📚 **BibTeX 导入**：支持一键导入 `.bib` 文件，自动生成论文列表，告别手动录入。
 *   🔍 **SEO 友好**：预置 Meta 标签与结构化数据，助您的学术成果更容易被搜索引擎收录。
 *   🛡️ **类型安全**：完全基于 TypeScript 构建，数据结构严谨可靠。
 
 ---
+
+## 📚 论文管理
+
+### BibTeX 自动导入
+无需手动编辑 Markdown 文件！只需将你的 `citations.bib` 文件放在项目根目录，然后运行：
+
+```bash
+npm run import-bibtex
+```
+
+系统会自动解析 `.bib` 文件并在 `src/content/publications/` 目录下生成对应的 Markdown 文件。
 
 ## ⚙️ 个性化配置
 

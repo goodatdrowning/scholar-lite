@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import PublicationItem from '../components/PublicationItem.astro';
 import HonorCard from '../components/HonorCard.astro';
+import PublicationChart from '../components/PublicationChart';
 import { Book, FileCode, ScrollText, Award, BookOpen, CheckCircle, Clock, FileInput } from 'lucide-react';
 
 // Fetch Collections
@@ -39,6 +40,10 @@ const sections = [
       <p class="text-lg text-gray-600" data-i18n-key="achievements.subtitle">
         A comprehensive collection of our academic publications, intellectual property, and collective honors.
       </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+      <PublicationChart client:visible publications={allPublications} />
     </div>
 
     <!-- Navigation Pills -->

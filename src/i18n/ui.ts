@@ -15,6 +15,9 @@ export const ui = {
     'nav.activities': 'Activities',
     'nav.join': 'Join Us',
     'nav.news': 'News',
+    'nav.search': 'Search',
+    
+    'search.subtitle': 'Search through our publications, news, and team members.',
     
     // 'hero.title': 'Advancing Computer Vision & Deep Learning Research.', // Moved to config.ts
     // 'hero.subtitle': 'We are the Scholar-Lite Lab.', // Moved to config.ts
@@ -104,6 +107,8 @@ export const ui = {
     'nav.activities': '团队活动',
     'nav.join': '加入我们',
     'nav.news': '新闻动态',
+    'nav.search': '站内搜索',
+    'search.subtitle': '搜索论文、新闻和团队成员。',
 
     // 'hero.title': '致力于计算机视觉与深度学习的前沿研究。', // Moved to config.ts
     // 'hero.subtitle': '我们是 Scholar-Lite 课题组。', // Moved to config.ts

@@ -2,8 +2,9 @@
 import { SITE, LOGO_IMAGE } from '../config';
 import { 
   Menu, X, Globe, ChevronDown, Check, Moon, Sun,
-  Home, BookOpen, Trophy, Users, Calendar, UserPlus, Sparkles
+  Home, BookOpen, Trophy, Users, Calendar, UserPlus, Sparkles, Search
 } from 'lucide-react';
+
 import { ui, defaultLang, languages } from '../i18n/ui';
 
 const { nav, i18n, customPages } = SITE;
@@ -15,6 +16,7 @@ const iconMap: Record<string, any> = {
   team: Users,
   activities: Calendar,
   join: UserPlus,
+  search: Search,
 };
 
 // Helper to get icon

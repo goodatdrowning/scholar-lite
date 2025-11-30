@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const prerender = true;
+---
+
+<Layout title={t('nav.search')}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-[60vh]">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">{t('nav.search')}</h1>
+      <p class="text-gray-600">{t('search.subtitle') || 'Search through our publications, news, and team members.'}</p>
+    </div>
+    
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+      <div id="search" class="w-full"></div>
+    </div>
+  </div>
+  
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ 
+        element: "#search", 
+        showSubResults: true,
+        pageSize: 10,
+        showImages: false
+      });
+    });
+  </script>
+  
+  <style is:global>
+    @reference "tailwindcss";
+    
+    /* Custom styling for Pagefind */
+    .pagefind-ui__search-input {
+      @apply rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+    }
+    .pagefind-ui__drawer {
+      @apply gap-4;
+    }
+    .pagefind-ui__result {
+      @apply border-b border-gray-100 py-4 last:border-0;
+    }
+    .pagefind-ui__result-title {
+      @apply font-semibold text-blue-600 hover:underline;
+    }
+    .pagefind-ui__result-excerpt {
+      @apply text-gray-600 text-sm mt-1;
+    }
+    .pagefind-ui__message {
+      @apply text-gray-500 text-center py-4;
+    }
+  </style>
+</Layout>
