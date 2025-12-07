@@ -4,7 +4,7 @@ authors: ["Jacob Devlin", "Ming-Wei Chang", "Kenton Lee", "Kristina Toutanova"]
 year: 2019
 venue: "NAACL-HLT"
 type: "paper"
-cover: "../../assets/paper-vision.jpg"
+cover: "../../assets/bert-cover.jpg"
 links:
   pdf: "https://arxiv.org/abs/1810.04805"
   code: "https://github.com/google-research/bert"
