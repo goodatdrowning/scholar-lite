@@ -2,9 +2,9 @@ import heroImage from './assets/hero-real.jpg';
 
 export const SITE = {
   website: 'https://scholar-lite-demo.netlify.app/', // Replace with your actual deployed URL
-  author: 'Scholar-Lite Team',
-  description: 'A lightweight, modern static website template for academic labs and scholars.',
-  title: 'Scholar-Lite',
+  author: 'Origin BJJ Team N22',
+  description: 'Origin BJJ North London - BJJ, Submission Grappling and more in Wood Green, North London. Become a complete martial artist.',
+  title: 'Origin BJJ Team N22',
   ogImage: 'astropaper-og.jpg',
   lightAndDarkMode: true,
   postPerPage: 3,
@@ -19,22 +19,22 @@ export const SITE = {
 
   // Hero Section (Home Page) - Main content does not need to be translated for 8 languages by default
   hero: {
-    title: 'Advancing Computer Vision & Deep Learning Research.',
-    subtitle: 'We are the Scholar-Lite Lab.',
-    action: 'View Publications', // Optional call to action text
+    title: 'Origin BJJ Team N22.',
+    subtitle: 'We create a complete martial artist.',
+    action: 'Start your journey today.', // Optional call to action text
     image: heroImage, // Hero image path
   },
 
   // Navigation
   nav: [
     { text: 'Home', link: '/', key: 'home' },
-    { text: 'Research', link: '/research', key: 'research' },
-    { text: 'Achievements', link: '/achievements', key: 'achievements' },
-    { text: 'Team', link: '/team', key: 'team' },
-    { text: 'Activities', link: '/activities', key: 'activities' },
+    { text: 'Timetable', link: '/research', key: 'research' },
+    { text: 'About Us', link: '/achievements', key: 'achievements' },
+    { text: 'Martial Artists', link: '/team', key: 'team' },
+    { text: 'Training Videos', link: '/activities', key: 'activities' },
+    { text: 'Blog', link: '/blog', key: 'activities' },
     { text: 'Join Us', link: '/join', key: 'join' },
-    { text: 'Search', link: '/search', key: 'search' },
-  ],
+     ],
 
   // Custom Pages (Appended after 'Join Us')
   customPages: [

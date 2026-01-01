@@ -1,7 +1,7 @@
 ---
 import { SITE, LOGO_IMAGE } from '../config';
 import { 
-  Menu, X, Globe, ChevronDown, Check, Moon, Sun,
+  Menu, X, Check, Moon, Sun,
   Home, BookOpen, Trophy, Users, Calendar, UserPlus, Sparkles, Search
 } from 'lucide-react';
 
@@ -43,28 +43,6 @@ const getIcon = (key: string) => iconMap[key] || Sparkles;
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex gap-6 items-center">
-        {nav.map(item => {
-          if (item.key === 'search') {
-            return (
-              <a 
-                href={item.link} 
-                class="p-2 text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-full transition-colors"
-                aria-label={item.text}
-              >
-                <Search className="w-5 h-5" />
-              </a>
-            );
-          }
-          return (
-            <a 
-              href={item.link} 
-              class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
-              data-i18n-key={`nav.${item.key}`}
-            >
-              {item.text}
-            </a>
-          );
-        })}
         
         <!-- Custom Pages -->
         {customPages && customPages.map(item => (
@@ -72,40 +50,11 @@ const getIcon = (key: string) => iconMap[key] || Sparkles;
              href={item.link} 
             class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
              data-i18n-key={item.key} 
-           >
+           > 
              {item.text}
            </a>
         ))}
-        
-        
-        
-        {i18n.enabled && (
-          <div class="relative ml-2 group">
-            <button 
-              class="flex items-center gap-1 px-3 py-2 rounded-full bg-gray-50 hover:bg-gray-100 text-gray-600 transition-colors outline-none"
-              aria-label="Select Language"
-            >
-              <Globe className="w-4 h-4" />
-              <span class="text-xs font-medium uppercase" id="current-lang-label">ZH</span>
-              <ChevronDown className="w-3 h-3 opacity-50" />
-            </button>
-            
-            <!-- Dropdown Menu -->
-            <div class="absolute right-0 pt-2 w-40 hidden group-hover:block transform origin-top-right transition-all">
-              <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2">
-                {Object.entries(languages).map(([code, label]) => (
-                  <button
-                    class="w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors lang-option flex items-center justify-between group/item"
-                    data-lang={code}
-                  >
-                    <span>{label}</span>
-                    <Check className="w-4 h-4 text-blue-600 opacity-0 group-[.active]/item:opacity-100 transition-opacity" />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+  
       </nav>
 
       <!-- Mobile Menu Button -->
@@ -325,34 +274,6 @@ const getIcon = (key: string) => iconMap[key] || Sparkles;
       link.addEventListener('click', window.closeMobileMenu);
     });
 
-    // Language handling
-    function updateHeaderLang(lang) {
-      if (langLabel) langLabel.textContent = lang.toUpperCase();
-      document.querySelectorAll('.lang-option').forEach(btn => {
-        const btnLang = btn.getAttribute('data-lang');
-        if (btnLang === lang) {
-          btn.classList.add('text-blue-600', 'bg-blue-50', 'border-blue-200');
-        } else {
-          btn.classList.remove('text-blue-600', 'bg-blue-50', 'border-blue-200');
-        }
-      });
-    }
-
-    window.addEventListener('language-change', (e) => {
-      updateHeaderLang(e.detail.lang);
-    });
-
-    try {
-      const saved = localStorage.getItem('preferred-lang') || defaultLang;
-      updateHeaderLang(saved);
-    } catch {}
-
-    document.querySelectorAll('.lang-option:not(.mobile-lang-option)').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.getAttribute('data-lang');
-        if (window.setLanguage) window.setLanguage(lang);
-      });
-    });
 
     // Auto close when resizing to desktop
     window.addEventListener('resize', () => {
