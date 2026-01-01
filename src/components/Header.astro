@@ -43,18 +43,17 @@ const getIcon = (key: string) => iconMap[key] || Sparkles;
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex gap-6 items-center">
-        
-        <!-- Custom Pages -->
-        {customPages && customPages.map(item => (
-           <a 
-             href={item.link} 
-            class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
-             data-i18n-key={item.key} 
-           > 
-             {item.text}
-           </a>
-        ))}
-  
+        {nav.map(item => {
+          return (
+            <a 
+              href={item.link} 
+              class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+              data-i18n-key={`nav.${item.key}`}
+            >
+              {item.text}
+            </a>
+          );
+        })}
       </nav>
 
       <!-- Mobile Menu Button -->
