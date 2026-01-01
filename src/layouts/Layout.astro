@@ -58,7 +58,7 @@ const ogImage = new URL(`/og/${finalOgSlug}.png`, Astro.url);
       Astro.url.pathname === '/' && (
         <script is:inline type="application/ld+json" set:html={JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Person",
+          "@type": "Organization",
           "name": SITE.author,
           "url": SITE.website,
           "image": new URL(SITE.avatar || SITE.logo, SITE.website).href,
